@@ -10,7 +10,7 @@ collections:
   - name: "about-me" # Used in routes, e.g., /admin/collections/blog
     label: "About Me" # Used in the UI
     folder: "content/about-me" # The path to the folder where the documents are stored
-    create: false # Allow users to create new documents in this collection
+    create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     filter:
       field: language
@@ -25,7 +25,7 @@ collections:
   - name: "summary"
     label: "Summary"
     folder: "content/summary"
-    create: false
+    create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     filter:
       field: language
