@@ -6,12 +6,12 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>
-          Katherine Moreno | Developer, Frontend, JavaScript, Typescript, Node,
-          React, Jest, TDD
+          Katherine Moreno | Developer, Frontend, JavaScript, Typescript, React,
+          Jest, RTL, TDD
         </title>
         <meta
           name="description"
-          content="Developer, Frontend, JavaScript, Typescript, Node, React, Jest, TDD"
+          content="Developer, Frontend, JavaScript, Typescript, React, Jest, RTL, TDD"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
