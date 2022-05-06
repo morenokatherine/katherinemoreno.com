@@ -1,27 +1,39 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  branch: main
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "about-me" # Used in routes, e.g., /admin/collections/blog
-    label: "About Me" # Used in the UI
-    folder: "content/about-me" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  - name: "about-me-en"
+    label: "About Me (EN)"
+    folder: "content/about-me"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     filter:
       field: language
       value: en
     fields:
-      - {label: "Language", name: "language"} # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "about_me"}
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"], default: "en"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - name: "summary"
-    label: "Summary"
+  - name: "about-me-es"
+    label: "About Me (ES)"
+    folder: "content/about-me"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter:
+      field: language
+      value: es
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"], default: "es"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "summary-en"
+    label: "Summary (EN)"
     folder: "content/summary"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -29,33 +41,63 @@ collections:
       field: language
       value: en
     fields:
-      - {label: "Language", name: "language"}
-      - {label: "Layout", name: "layout", widget: "hidden", default: "summary"}
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"], default: "en"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "summary-es"
+    label: "Summary (ES)"
+    folder: "content/summary"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter:
+      field: language
+      value: es
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"], default: "es"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "technologies"
     label: "Technologies"
     folder: "content/technologies"
+    sortable_fields: ['index', 'rating', 'title']
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "technologies"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Rating (scale of 0-10)", name: "rating", widget: "number"}
+      - {label: "Position", name: "index", widget: "number"}
       - {label: "Featured Image", name: "image", widget: "image"}
-  - name: "projects"
-    label: "Projects"
+  - name: "projects-en"
+    label: "Projects (EN)"
     folder: "content/projects"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ['index', 'date', 'title']
     filter:
       field: language
       value: en
     fields:
-      - {label: "Language", name: "language"}
-      - {label: "Layout", name: "layout", widget: "hidden", default: "projects"}
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"], default: "en"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Position", name: "index", widget: "number"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "projects-es"
+    label: "Projects (ES)"
+    folder: "content/projects"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ['index', 'date', 'title']
+    filter:
+      field: language
+      value: es
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"], default: "es"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Position", name: "index", widget: "number"}
       - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
