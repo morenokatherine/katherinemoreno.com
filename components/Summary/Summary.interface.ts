@@ -1,5 +1,5 @@
 import { SummaryI } from "../../pages";
 
-export interface AboutMeProps {
+export interface SummaryProps {
   data: SummaryI;
 }

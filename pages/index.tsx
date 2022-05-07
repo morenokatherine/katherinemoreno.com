@@ -6,7 +6,7 @@ import { Progress } from "../components/Progress/Progress";
 import { Tech } from "../components/Tech/Tech";
 import { Image } from "../components/Image/Image";
 import { AboutMe } from "../components/AboutMe/AboutMe";
-import { Summary } from "../tests/components/Summary/Summary";
+import { Summary } from "../components/Summary/Summary";
 
 export interface HomeProps {
   technologies: TechnologyI[];
