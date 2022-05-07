@@ -2,29 +2,28 @@ import fs from "fs";
 import matter from "gray-matter";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { RandomUser } from "./user.interface";
 
-interface HomeProps {
-  technologies: Technology[];
-  aboutMeList: AboutMe[];
-  summaryList: Summary[];
+export interface HomeProps {
+  technologies: TechnologyI[];
+  aboutMeList: AboutMeI[];
+  summaryList: SummaryI[];
 }
 
-interface Technology {
+export interface TechnologyI {
   image: string;
   title: string;
   index: number;
   rating: number;
 }
 
-interface AboutMe {
+export interface AboutMeI {
   image: string;
   language: string;
   title: string;
   content: string;
 }
 
-interface Summary {
+export interface SummaryI {
   image: string;
   language: string;
   title: string;
