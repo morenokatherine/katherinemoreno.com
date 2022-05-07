@@ -73,7 +73,7 @@ const Home: NextPage<HomeProps> = (props) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const filesInTechnologies = fs.readdirSync("./content/technologies");
   const filesInAboutMe = fs.readdirSync("./content/about-me");
   const filesInSummary = fs.readdirSync("./content/summary");
