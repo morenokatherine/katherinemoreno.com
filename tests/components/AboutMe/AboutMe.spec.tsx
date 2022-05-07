@@ -4,10 +4,10 @@ import { render, screen } from "@testing-library/react";
 
 describe("Component: AboutMe", () => {
   const aboutMeData: AboutMeI = {
-    image: "",
+    image: "image",
     language: "",
-    title: "",
-    content: "",
+    title: "title",
+    content: "content",
   };
   it("should render a title", () => {
     render(<AboutMe data={aboutMeData} />);
@@ -19,6 +19,6 @@ describe("Component: AboutMe", () => {
   });
   it("should render an image", () => {
     render(<AboutMe data={aboutMeData} />);
-    screen.getByAltText("me");
+    screen.getByAltText("Katherine Moreno");
   });
 });

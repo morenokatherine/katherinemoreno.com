@@ -9,10 +9,6 @@ describe("Component: Tech", () => {
     index: 0,
     rating: 8,
   };
-  it("should render a title", () => {
-    render(<Tech data={techData} />);
-    screen.getByText(techData.title);
-  });
   it("should render a image", () => {
     render(<Tech data={techData} />);
     screen.getByAltText(techData.title);

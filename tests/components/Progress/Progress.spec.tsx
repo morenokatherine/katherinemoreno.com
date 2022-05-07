@@ -1,4 +1,3 @@
-import { AboutMeI } from "../../../pages/index";
 import { Progress } from "../../../components/Progress/Progress";
 import { render, screen } from "@testing-library/react";
 import { ProgressProps } from "../../../components/Progress/Progress.interface";

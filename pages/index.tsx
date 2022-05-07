@@ -2,6 +2,11 @@ import fs from "fs";
 import matter from "gray-matter";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Progress } from "../components/Progress/Progress";
+import { Tech } from "../components/Tech/Tech";
+import { Image } from "../components/Image/Image";
+import { AboutMe } from "../components/AboutMe/AboutMe";
+import { Summary } from "../tests/components/Summary/Summary";
 
 export interface HomeProps {
   technologies: TechnologyI[];
@@ -32,7 +37,7 @@ export interface SummaryI {
 
 const Home: NextPage<HomeProps> = (props) => {
   return (
-    <div>
+    <div className="container flex flex-col mx-auto">
       <Head>
         <title>
           Katherine Moreno | Developer, Frontend, JavaScript, Typescript, React,
@@ -44,7 +49,26 @@ const Home: NextPage<HomeProps> = (props) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className="">Hello world!</h1>
+      <main className="flex flex-col gap-10 p-4 sm:p-8 xl:pt-10 xl:px-64">
+        <section>
+          <AboutMe data={props.aboutMeList[1]} />
+        </section>
+        <hr />
+        <section>
+          <Summary data={props.summaryList[0]} />
+        </section>
+        <section>
+          <ol className="flex flex-col gap-4">
+            {props.technologies.map((tech) => {
+              return (
+                <li key={tech.index}>
+                  <Tech data={tech} />
+                </li>
+              );
+            })}
+          </ol>
+        </section>
+      </main>
     </div>
   );
 };
@@ -54,17 +78,22 @@ export async function getServerSideProps() {
   const filesInAboutMe = fs.readdirSync("./content/about-me");
   const filesInSummary = fs.readdirSync("./content/summary");
 
-  const technologies = filesInTechnologies.map((filename) => {
-    const file = fs.readFileSync(`./content/technologies/${filename}`, "utf8");
-    const matterData = matter(file);
-    const data = {
-      image: matterData.data.image,
-      title: matterData.data.title,
-      index: matterData.data.index,
-      rating: matterData.data.rating,
-    };
-    return data;
-  });
+  const technologies = filesInTechnologies
+    .map((filename) => {
+      const file = fs.readFileSync(
+        `./content/technologies/${filename}`,
+        "utf8"
+      );
+      const matterData = matter(file);
+      const data = {
+        image: matterData.data.image,
+        title: matterData.data.title,
+        index: matterData.data.index,
+        rating: matterData.data.rating,
+      };
+      return data;
+    })
+    .sort((a, b) => b.rating - a.rating);
 
   const aboutMe = filesInAboutMe.map((filename) => {
     const file = fs.readFileSync(`./content/about-me/${filename}`, "utf8");
