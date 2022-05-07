@@ -1,7 +1,37 @@
+import fs from "fs";
+import matter from "gray-matter";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { RandomUser } from "./user.interface";
 
-const Home: NextPage = () => {
+interface HomeProps {
+  technologies: Technology[];
+  aboutMeList: AboutMe[];
+  summaryList: Summary[];
+}
+
+interface Technology {
+  image: string;
+  title: string;
+  index: number;
+  rating: number;
+}
+
+interface AboutMe {
+  image: string;
+  language: string;
+  title: string;
+  content: string;
+}
+
+interface Summary {
+  image: string;
+  language: string;
+  title: string;
+  content: string;
+}
+
+const Home: NextPage<HomeProps> = (props) => {
   return (
     <div>
       <Head>
@@ -19,5 +49,57 @@ const Home: NextPage = () => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  const filesInTechnologies = fs.readdirSync("./content/technologies");
+  const filesInAboutMe = fs.readdirSync("./content/about-me");
+  const filesInSummary = fs.readdirSync("./content/summary");
+
+  const technologies = filesInTechnologies.map((filename) => {
+    const file = fs.readFileSync(`./content/technologies/${filename}`, "utf8");
+    const matterData = matter(file);
+    const data = {
+      image: matterData.data.image,
+      title: matterData.data.title,
+      index: matterData.data.index,
+      rating: matterData.data.rating,
+    };
+    return data;
+  });
+
+  const aboutMe = filesInAboutMe.map((filename) => {
+    const file = fs.readFileSync(`./content/about-me/${filename}`, "utf8");
+    const matterData = matter(file);
+    const data = {
+      image: matterData.data.image,
+      language: matterData.data.language,
+      title: matterData.data.title,
+      content: matterData.content,
+    };
+    return data;
+  });
+
+  const summary = filesInSummary.map((filename) => {
+    const file = fs.readFileSync(`./content/summary/${filename}`, "utf8");
+    const matterData = matter(file);
+    const data = {
+      image: matterData.data.image,
+      language: matterData.data.language,
+      title: matterData.data.title,
+      content: matterData.content,
+    };
+    return data;
+  });
+
+  const homeProps: HomeProps = {
+    technologies: technologies,
+    aboutMeList: aboutMe,
+    summaryList: summary,
+  };
+
+  return {
+    props: homeProps,
+  };
+}
 
 export default Home;
