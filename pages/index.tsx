@@ -7,6 +7,7 @@ import { AboutMe } from "../components/AboutMe/AboutMe";
 import { Summary } from "../components/Summary/Summary";
 import { NextSeo } from "next-seo";
 import { Footer } from "../components/Footer/Footer";
+import ReactMarkdown from "react-markdown";
 
 export interface HomeProps {
   technologies: TechnologyI[];
@@ -112,7 +113,10 @@ const Home: NextPage<HomeProps> = (props) => {
         <section>
           <Summary data={props.summaryList[0]} />
         </section>
-        <section>
+        <section className="flex flex-col gap-6 justify-center">
+          <h3 className="text-xl text-center font-bold text-purple-900">
+            {props.techSectionList[0].header}
+          </h3>
           <ol className="flex flex-col gap-4">
             {props.technologies.map((tech) => {
               return (
@@ -122,6 +126,9 @@ const Home: NextPage<HomeProps> = (props) => {
               );
             })}
           </ol>
+          <ReactMarkdown className="markdown-footer flex flex-col items-center">
+            {props.techSectionList[0].footer}
+          </ReactMarkdown>
         </section>
       </main>
       <Footer footerData={props.footerList[0]} socialList={props.socialList} />

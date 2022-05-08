@@ -6,6 +6,9 @@
   @apply text-2xl;
 }
 
+.markdown-footer img {
+  @apply h-44 w-44;
+}
 .markdown a {
   @apply text-purple-700 hover:text-purple-400;
 }

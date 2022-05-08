@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" id="katman_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="700px" height="700px" viewBox="0 0 700 700" style="enable-background:new 0 0 700 700;" xml:space="preserve">
+<svg role="img" viewBox="10 10 450 485" xmlns="http://www.w3.org/2000/svg">
 <style type="text/css">
-	.st0{enable-background:new    ;}
-	.st1{fill:#79A23C;}
-	.st2{fill:#ED729C;}
+	.st1{
+		fill:#79A23C;
+		transform: translate(-25%, -15%);
+		}
+	.st2{
+		fill:#ED729C;
+		transform: translate(-25%, -15%);
+	}
 </style>
 <g>
 	<path class="st1" d="M200.2,284.5c-0.9-6.9-1.7-13.5-1.6-20.2c0-0.3,0-0.6,0-0.9c0-6.7,0-6.7-6.9-6.7c-1.1,0-2.3,0-3.4,0
