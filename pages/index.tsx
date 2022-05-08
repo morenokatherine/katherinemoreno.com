@@ -6,6 +6,7 @@ import { Tech } from "../components/Tech/Tech";
 import { AboutMe } from "../components/AboutMe/AboutMe";
 import { Summary } from "../components/Summary/Summary";
 import { NextSeo } from "next-seo";
+import { Footer } from "../components/Footer/Footer";
 
 export interface HomeProps {
   technologies: TechnologyI[];
@@ -14,6 +15,7 @@ export interface HomeProps {
   seoList: SeoI[];
   socialList: SocialI[];
   techSectionList: TechSectionI[];
+  footerList: FooterI[];
 }
 
 export interface TechnologyI {
@@ -56,6 +58,12 @@ export interface TechSectionI {
   header: string;
   description: string;
   footer: string;
+}
+
+export interface FooterI {
+  title: string;
+  description: string;
+  quote: string;
 }
 
 const Home: NextPage<HomeProps> = (props) => {
@@ -116,6 +124,7 @@ const Home: NextPage<HomeProps> = (props) => {
           </ol>
         </section>
       </main>
+      <Footer footerData={props.footerList[0]} socialList={props.socialList} />
     </div>
   );
 };
@@ -127,6 +136,18 @@ export async function getStaticProps() {
   const filesInSocial = fs.readdirSync("./content/social");
   const filesInSeo = fs.readdirSync("./content/seo");
   const filesInTechSection = fs.readdirSync("./content/tech-section");
+  const filesInFooter = fs.readdirSync("./content/footer");
+
+  const footerList = filesInFooter.map((filename) => {
+    const file = fs.readFileSync(`./content/footer/${filename}`, "utf8");
+    const matterData = matter(file);
+    const data = {
+      title: matterData.data.title,
+      description: matterData.data.description,
+      quote: matterData.data.quote,
+    };
+    return data;
+  });
 
   const techSeoList = filesInSeo.map((filename) => {
     const file = fs.readFileSync(`./content/seo/${filename}`, "utf8");
@@ -214,6 +235,7 @@ export async function getStaticProps() {
     seoList: techSeoList,
     socialList: techSocialList,
     techSectionList: techSectionList,
+    footerList: footerList,
   };
 
   return {
