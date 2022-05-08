@@ -6,6 +6,72 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
+  - name: "seo-en"
+    label: "SEO (EN)"
+    folder: "content/seo"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter:
+      field: language
+      value: en
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"], default: "en"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Icon", name: "ico", widget: "image"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Json-Ld", name: "jsonLd", widget: "code", default_language: "json", output_code_only: "true"}
+  - name: "seo-es"
+    label: "SEO (ES)"
+    folder: "content/seo"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter:
+      field: language
+      value: es
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"], default: "es"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Icon", name: "ico", widget: "image"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Json-Ld", name: "jsonLd", widget: "code", default_language: "json", output_code_only: "true"}
+  - name: "social"
+    label: "Social"
+    folder: "content/social"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Url", name: "url", widget: "string"}
+      - {label: "Position", name: "index", widget: "number"}
+      - {label: "Image", name: "image", widget: "image"}
+  - name: "footer-en"
+    label: "Footer (EN)"
+    folder: "content/footer"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter:
+      field: language
+      value: en
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"], default: "en"}
+      - {label: "Title", name: "title", widget: "string", required: false}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Quote", name: "quote", widget: "string", required: false}
+  - name: "footer-es"
+    label: "Footer (ES)"
+    folder: "content/footer"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter:
+      field: language
+      value: es
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"], default: "en"}
+      - {label: "Title", name: "title", widget: "string", required: false}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Quote", name: "quote", widget: "string", required: false}
   - name: "about-me-en"
     label: "About Me (EN)"
     folder: "content/about-me"
@@ -58,6 +124,32 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "Tech Section (EN)"
+    label: "Tech"
+    folder: "content/tech-section"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter:
+      field: language
+      value: en
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"], default: "en"}
+      - {label: "Header", name: "header", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Footer", name: "footer", widget: "markdown", required: false}
+  - name: "Tech Section (ES)"
+    label: "Tech"
+    folder: "content/tech-section"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter:
+      field: language
+      value: es
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"], default: "es"}
+      - {label: "Header", name: "header", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Footer", name: "footer", widget: "markdown", required: false}
   - name: "technologies"
     label: "Technologies"
     folder: "content/technologies"

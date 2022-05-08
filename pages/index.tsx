@@ -2,11 +2,10 @@ import fs from "fs";
 import matter from "gray-matter";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Progress } from "../components/Progress/Progress";
 import { Tech } from "../components/Tech/Tech";
-import { Image } from "../components/Image/Image";
 import { AboutMe } from "../components/AboutMe/AboutMe";
 import { Summary } from "../components/Summary/Summary";
+import { NextSeo } from "next-seo";
 
 export interface HomeProps {
   technologies: TechnologyI[];
@@ -38,15 +37,12 @@ export interface SummaryI {
 const Home: NextPage<HomeProps> = (props) => {
   return (
     <div className="container flex flex-col mx-auto">
+      <NextSeo
+        title="Katherine Moreno 👩‍💻 | Developer, Frontend, JavaScript, Typescript, React,
+          Jest, RTL, TDD"
+        description="Developer, Frontend, JavaScript, Typescript, React, Jest, RTL, TDD"
+      />
       <Head>
-        <title>
-          Katherine Moreno | Developer, Frontend, JavaScript, Typescript, React,
-          Jest, RTL, TDD
-        </title>
-        <meta
-          name="description"
-          content="Developer, Frontend, JavaScript, Typescript, React, Jest, RTL, TDD"
-        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col gap-10 p-4 sm:p-8 xl:pt-10 xl:px-64">

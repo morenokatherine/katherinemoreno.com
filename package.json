@@ -12,6 +12,7 @@
   "dependencies": {
     "gray-matter": "^4.0.3",
     "next": "12.1.5",
+    "next-seo": "^5.4.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-markdown": "^8.0.3"
