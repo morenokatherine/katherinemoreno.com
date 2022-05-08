@@ -11,6 +11,9 @@ export interface HomeProps {
   technologies: TechnologyI[];
   aboutMeList: AboutMeI[];
   summaryList: SummaryI[];
+  seoList: SeoI[];
+  socialList: SocialI[];
+  techSectionList: TechSectionI[];
 }
 
 export interface TechnologyI {
@@ -34,16 +37,64 @@ export interface SummaryI {
   content: string;
 }
 
+export interface SeoI {
+  title: string;
+  description: string;
+  ico: string;
+  image: string;
+  jsonLd: string;
+}
+
+export interface SocialI {
+  title: string;
+  url: string;
+  index: number;
+  image: string;
+}
+
+export interface TechSectionI {
+  header: string;
+  description: string;
+  footer: string;
+}
+
 const Home: NextPage<HomeProps> = (props) => {
   return (
     <div className="container flex flex-col mx-auto">
       <NextSeo
-        title="Katherine Moreno 👩‍💻 | Developer, Frontend, JavaScript, Typescript, React,
-          Jest, RTL, TDD"
-        description="Developer, Frontend, JavaScript, Typescript, React, Jest, RTL, TDD"
+        title={props.seoList[0].title}
+        description={props.seoList[0].description}
+        canonical="https://www.katherinemoreno.com/"
+        openGraph={{
+          locale: "es_ES",
+          url: "https://www.katherinemoreno.com/",
+          title: props.seoList[0].title,
+          description: props.seoList[0].description,
+          images: [
+            {
+              url: props.seoList[0].image,
+              width: 800,
+              height: 800,
+              alt: "Katherine Moreno",
+              type: "image/webp",
+            },
+          ],
+          site_name: "Katherine Moreno",
+        }}
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image",
+        }}
       />
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={props.seoList[0].ico} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(props.seoList[0].jsonLd),
+          }}
+        />
       </Head>
       <main className="flex flex-col gap-10 p-4 sm:p-8 xl:pt-10 xl:px-64">
         <section>
@@ -73,6 +124,47 @@ export async function getStaticProps() {
   const filesInTechnologies = fs.readdirSync("./content/technologies");
   const filesInAboutMe = fs.readdirSync("./content/about-me");
   const filesInSummary = fs.readdirSync("./content/summary");
+  const filesInSocial = fs.readdirSync("./content/social");
+  const filesInSeo = fs.readdirSync("./content/seo");
+  const filesInTechSection = fs.readdirSync("./content/tech-section");
+
+  const techSeoList = filesInSeo.map((filename) => {
+    const file = fs.readFileSync(`./content/seo/${filename}`, "utf8");
+    const matterData = matter(file);
+    const data = {
+      title: matterData.data.title,
+      description: matterData.data.description,
+      ico: matterData.data.ico,
+      image: matterData.data.image,
+      jsonLd: JSON.parse(matterData.data.jsonLd),
+    };
+    return data;
+  });
+
+  const techSocialList = filesInSocial
+    .map((filename) => {
+      const file = fs.readFileSync(`./content/social/${filename}`, "utf8");
+      const matterData = matter(file);
+      const data = {
+        title: matterData.data.title,
+        url: matterData.data.url,
+        index: matterData.data.index,
+        image: matterData.data.image,
+      };
+      return data;
+    })
+    .sort((a, b) => a.index - b.index);
+
+  const techSectionList = filesInTechSection.map((filename) => {
+    const file = fs.readFileSync(`./content/tech-section/${filename}`, "utf8");
+    const matterData = matter(file);
+    const data = {
+      header: matterData.data.header,
+      description: matterData.data.description,
+      footer: matterData.data.footer,
+    };
+    return data;
+  });
 
   const technologies = filesInTechnologies
     .map((filename) => {
@@ -119,6 +211,9 @@ export async function getStaticProps() {
     technologies: technologies,
     aboutMeList: aboutMe,
     summaryList: summary,
+    seoList: techSeoList,
+    socialList: techSocialList,
+    techSectionList: techSectionList,
   };
 
   return {
