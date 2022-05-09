@@ -23,7 +23,7 @@ jsonLd: |-
         "birthDate": "1995-07-08",
         "gender": "female",
         "url": "https://www.katherinemoreno.com",
-  	    "sameAs" : [ "https://www.linkedin.com/in/katherinedev",
-        "https://github.com/mkath24"]
+  	    "sameAs" : [ "https://www.linkedin.com/in/morenokatherine",
+        "https://github.com/morenokatherine"]
       }
 ---
