@@ -8,7 +8,7 @@ export const AboutMe = (props: AboutMeProps) => {
       <h1 className="text-2xl text-center md:text-left md:text-3xl">
         {props.data.title} <span>{props.data.content}</span>
       </h1>
-      <div className="flex-shrink-0 w-48 h-48 grid items-center">
+      <div className="flex-shrink-0 min-w-48 min-h-48 w-48 h-48 grid items-center">
         <Image src={props.data.image} alt="Katherine Moreno" />
       </div>
     </div>
