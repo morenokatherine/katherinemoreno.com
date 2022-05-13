@@ -7,7 +7,12 @@ export const Tech = (props: TechProps) => {
   return (
     <div className="flex items-center gap-4">
       <TechImage src={props.data.image} alt={props.data.title} />
-      <Progress value={props.data.rating} max={10} min={0} />
+      <Progress
+        value={props.data.rating}
+        max={10}
+        min={0}
+        label={props.data.title}
+      />
     </div>
   );
 };
