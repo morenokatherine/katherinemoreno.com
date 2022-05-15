@@ -1,4 +1,3 @@
-import { AboutMeI } from "../../../pages/index";
 import { TechImage } from "../../../components/TechImage/TechImage";
 import { render, screen } from "@testing-library/react";
 import { TechImageProps } from "../../../components/TechImage/TechImage.interface";

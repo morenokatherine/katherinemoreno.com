@@ -44,6 +44,8 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Url", name: "url", widget: "string"}
+      - {label: "baseUrl", name: "url", widget: "string"}
+      - {label: "finalUrl", name: "url", widget: "string"}
       - {label: "Position", name: "index", widget: "number"}
       - {label: "Image", name: "image", widget: "image"}
   - name: "footer-en"
@@ -160,7 +162,8 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Rating (scale of 0-10)", name: "rating", widget: "number"}
       - {label: "Position", name: "index", widget: "number"}
-      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Is Soft", name: "isSoft", widget: "boolean", required: false}
   - name: "projects-en"
     label: "Projects (EN)"
     folder: "content/projects"

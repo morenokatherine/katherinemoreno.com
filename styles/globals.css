@@ -12,3 +12,18 @@
 .markdown a {
   @apply text-purple-700 hover:text-purple-400;
 }
+
+.a-underline a {
+  @apply underline hover:opacity-70;
+}
+
+@media print {
+  html,
+  body,
+  body > div {
+    width: 8.5in;
+    height: 12in;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

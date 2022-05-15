@@ -1,4 +1,3 @@
-import { AboutMeI } from "../../../pages/index";
 import { Image } from "../../../components/Image/Image";
 import { render, screen } from "@testing-library/react";
 import { ImageProps } from "../../../components/Image/Image.interface";

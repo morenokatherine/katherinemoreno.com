@@ -8,64 +8,7 @@ import { Summary } from "../components/Summary/Summary";
 import { NextSeo } from "next-seo";
 import { Footer } from "../components/Footer/Footer";
 import ReactMarkdown from "react-markdown";
-
-export interface HomeProps {
-  technologies: TechnologyI[];
-  aboutMeList: AboutMeI[];
-  summaryList: SummaryI[];
-  seoList: SeoI[];
-  socialList: SocialI[];
-  techSectionList: TechSectionI[];
-  footerList: FooterI[];
-}
-
-export interface TechnologyI {
-  image: string;
-  title: string;
-  index: number;
-  rating: number;
-}
-
-export interface AboutMeI {
-  image: string;
-  language: string;
-  title: string;
-  content: string;
-}
-
-export interface SummaryI {
-  image: string;
-  language: string;
-  title: string;
-  content: string;
-}
-
-export interface SeoI {
-  title: string;
-  description: string;
-  ico: string;
-  image: string;
-  jsonLd: string;
-}
-
-export interface SocialI {
-  title: string;
-  url: string;
-  index: number;
-  image: string;
-}
-
-export interface TechSectionI {
-  header: string;
-  description: string;
-  footer: string;
-}
-
-export interface FooterI {
-  title: string;
-  description: string;
-  quote: string;
-}
+import { HomeProps } from "./interfaces/common.interface";
 
 const Home: NextPage<HomeProps> = (props) => {
   return (
@@ -176,6 +119,8 @@ export async function getStaticProps() {
       const data = {
         title: matterData.data.title,
         url: matterData.data.url,
+        baseUrl: matterData.data.baseUrl,
+        finalUrl: matterData.data.finalUrl,
         index: matterData.data.index,
         image: matterData.data.image,
       };
@@ -206,9 +151,11 @@ export async function getStaticProps() {
         title: matterData.data.title,
         index: matterData.data.index,
         rating: matterData.data.rating,
+        isSoft: matterData.data.isSoft,
       };
       return data;
     })
+    .filter((tech) => !tech.isSoft)
     .sort((a, b) => b.rating - a.rating);
 
   const aboutMe = filesInAboutMe.map((filename) => {

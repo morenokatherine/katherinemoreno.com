@@ -7,6 +7,7 @@ describe("Component: Progress", () => {
     value: 5,
     max: 10,
     min: 0,
+    label: "test",
   };
   it("should render the component", () => {
     render(
@@ -14,6 +15,7 @@ describe("Component: Progress", () => {
         value={progressData.value}
         max={progressData.max}
         min={progressData.min}
+        label={progressData.label}
       />
     );
     screen.getByRole("progressbar");
