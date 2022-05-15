@@ -8,7 +8,7 @@ import { Summary } from "../components/Summary/Summary";
 import { NextSeo } from "next-seo";
 import { Footer } from "../components/Footer/Footer";
 import ReactMarkdown from "react-markdown";
-import { HomeProps } from "./interfaces/common.interface";
+import { HomeProps } from "../utils/interfaces/common.interface";
 
 const Home: NextPage<HomeProps> = (props) => {
   return (

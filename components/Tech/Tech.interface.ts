@@ -1,4 +1,4 @@
-import { TechnologyI } from "../../pages/interfaces/common.interface";
+import { TechnologyI } from "../../utils/interfaces/common.interface";
 
 export interface TechProps {
   data: TechnologyI;

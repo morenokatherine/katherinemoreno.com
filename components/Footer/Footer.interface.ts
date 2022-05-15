@@ -1,4 +1,4 @@
-import { FooterI, SocialI } from "../../pages/interfaces/common.interface";
+import { FooterI, SocialI } from "../../utils/interfaces/common.interface";
 
 export interface FooterProps {
   footerData: FooterI;

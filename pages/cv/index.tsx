@@ -9,7 +9,7 @@ import { AcademyCard } from "../../components/AcademyCard/AcademyCard";
 import { AcademyCardData } from "../../components/AcademyCard/AcademyCard.interface";
 import { Image } from "../../components/Image/Image";
 import { TechImage } from "../../components/TechImage/TechImage";
-import { HomeProps } from "../interfaces/common.interface";
+import { HomeProps } from "../../utils/interfaces/common.interface";
 
 {
   /* <div className="xl:w-8/12 flex items-center mx-auto p-8"> */

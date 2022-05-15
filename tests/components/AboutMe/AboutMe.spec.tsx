@@ -1,6 +1,6 @@
 import { AboutMe } from "../../../components/AboutMe/AboutMe";
 import { render, screen } from "@testing-library/react";
-import { AboutMeI } from "../../../pages/interfaces/common.interface";
+import { AboutMeI } from "../../../utils/interfaces/common.interface";
 
 describe("Component: AboutMe", () => {
   const aboutMeData: AboutMeI = {

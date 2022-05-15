@@ -1,4 +1,4 @@
-import { SummaryI } from "../../pages/interfaces/common.interface";
+import { SummaryI } from "../../utils/interfaces/common.interface";
 
 export interface SummaryProps {
   data: SummaryI;

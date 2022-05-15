@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Tech } from "../../../components/Tech/Tech";
-import { TechnologyI } from "../../../pages/interfaces/common.interface";
+import { TechnologyI } from "../../../utils/interfaces/common.interface";
 
 describe("Component: Tech", () => {
   const techData: TechnologyI = {
