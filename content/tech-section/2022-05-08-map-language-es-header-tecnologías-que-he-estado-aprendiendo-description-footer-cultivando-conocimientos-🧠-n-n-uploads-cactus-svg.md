@@ -1,9 +1,9 @@
 ---
-language: es
-header: Tecnologías que he estado aprendiendo
+language: en
+header: Technologies I have been learning
 description: ""
 footer: |-
-  Cultivando conocimientos 🧠
+  Cultivating knowledge 🧠
 
   ![](/uploads/cactus.svg)
 ---

@@ -1,6 +1,6 @@
 ---
-language: es
-title: ¡Hola a todos! soy Katherine Moreno
+language: en
+title: Hi there! I'm Katherine Moreno
 image: /uploads/katherine-moreno.webp
 ---
-y soy frontend developer en constante aprendizaje 👩‍💻
+and I'm a full stack web developer in continuous learning 👩‍💻

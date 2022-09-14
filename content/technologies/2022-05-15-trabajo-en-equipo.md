@@ -1,6 +1,6 @@
 ---
 layout: technologies
-title: Trabajo en equipo
+title: Teamwork
 image: null
 rating: 10
 index: 11

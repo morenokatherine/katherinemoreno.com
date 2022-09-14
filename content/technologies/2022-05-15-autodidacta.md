@@ -1,6 +1,6 @@
 ---
 layout: technologies
-title: Autodidacta
+title: Autodidact
 image: null
 rating: 10
 index: 10

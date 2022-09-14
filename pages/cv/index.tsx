@@ -18,6 +18,20 @@ export const CV: NextPage<HomeProps> = (props) => {
   const { socialList } = props;
   const academyList: AcademyCardData[] = [
     {
+      title: "Ironhack - Backend Java Developer",
+      url: "https://www.ironhack.com/en/web-development",
+      image: "/images/ironhack.png",
+      academy: {
+        title: "Ironhack",
+        url: "https://www.ironhack.com/en",
+      },
+      author: {
+        name: "Ironhack",
+        url: "https://www.ironhack.com/en",
+      },
+      period: "2022",
+    },
+    {
       title: "React - The Complete Guide (incl Hooks, React Router, Redux)",
       url: "https://www.udemy.com/course/react-the-complete-guide-incl-redux",
       image: "/images/course-udemy-1.jpeg",
@@ -112,19 +126,15 @@ export const CV: NextPage<HomeProps> = (props) => {
           <ol className="flex flex-col gap-8">
             <li>
               <section>
-                <h1 className="text-xl mb-2">Perfil profesional</h1>
+                <h1 className="text-xl mb-2">Profile</h1>
                 <p className="text-justify">
-                  Desarrolladora web. Actualmente buscando una compañía donde
-                  pueda aportar valor con todos los conocimientos que he
-                  adquirido para favorecer el rendimiento de la empresa. ¡Busco
-                  unirme a un equipo de trabajo que me permita crecer
-                  profesionalmente!
+                Full stack web developer. I want to join a work team that allows me to grow professionally! I am currently looking for a company that can add value with all knowledge I have acquired to enhance the company&#39;s performance.
                 </p>
               </section>
             </li>
             <li>
               <section>
-                <h1 className="text-xl mb-4">Contacto</h1>
+                <h1 className="text-xl mb-4">Contact</h1>
                 <ol className="flex flex-col gap-4">
                   {socialList.map((social) => {
                     return (
@@ -152,16 +162,16 @@ export const CV: NextPage<HomeProps> = (props) => {
             </li>
             <li>
               <section>
-                <h1 className="text-xl mb-2">Idiomas</h1>
+                <h1 className="text-xl mb-2">Languages</h1>
                 <ul className="">
-                  <li className="mb-2">Español Nativo</li>
-                  <li>Inglés Básico</li>
+                  <li className="mb-2">Spanish (Native)</li>
+                  <li>English (Medium)</li>
                 </ul>
               </section>
             </li>
             <li>
               <section>
-                <h1 className="text-xl mb-2">Ubicacion</h1>
+                <h1 className="text-xl mb-2">Location</h1>
                 <ul>
                   <li>
                     <a
@@ -169,7 +179,7 @@ export const CV: NextPage<HomeProps> = (props) => {
                       rel="noreferrer"
                       href="https://goo.gl/maps/LjH478fYoGnx957n9"
                     >
-                      Barcelona, España
+                      Barcelona, Spain
                     </a>
                   </li>
                 </ul>
@@ -189,7 +199,7 @@ export const CV: NextPage<HomeProps> = (props) => {
             </li>
             <li>
               <section>
-                <h1 className="text-2xl mb-8">Habilidades</h1>
+                <h1 className="text-2xl mb-8">Skills</h1>
                 <div className="grid grid-cols-2">
                   <div className="col-span-1">
                     <h2 className="text-2xl mb-2">Soft</h2>
@@ -218,7 +228,7 @@ export const CV: NextPage<HomeProps> = (props) => {
 
             <li>
               <section>
-                <h1 className="text-2xl mb-8">Fomación Académica</h1>
+                <h1 className="text-2xl mb-8">Education</h1>
                 <ul className="flex flex-col gap-4">
                   {academyList.map((academy) => {
                     return (
@@ -232,10 +242,10 @@ export const CV: NextPage<HomeProps> = (props) => {
             </li>
             <li>
               <section>
-                <h1 className="text-2xl mb-8">Proyecto Personal</h1>
+                <h1 className="text-2xl mb-8">Personal Proyects</h1>
                 <ul>
                   <li>
-                    <b className="font-bold">Web Personal:</b>{" "}
+                    <b className="font-bold">Web:</b>{" "}
                     <Link href="/">
                       <a className="print:hidden">
                         <span>www.katherinemoreno.com</span>

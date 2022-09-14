@@ -1,6 +1,6 @@
 ---
 layout: technologies
-title: Proactiva
+title: Proactive
 image: null
 rating: 10
 index: 9

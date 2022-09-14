@@ -1,6 +1,6 @@
 ---
 layout: technologies
-title: Organización
+title: Organization
 image: null
 rating: 10
 index: 8

@@ -1,9 +1,9 @@
 ---
-language: es
-title: Katherine Moreno 👩‍💻 | Developer, Frontend, JavaScript, Typescript,
-  React, Jest, RTL, TDD, CSS, HTML, Tailwind
-description: Developer, Frontend, JavaScript, Typescript, React, Jest, RTL, TDD,
-  CSS, HTML, Tailwind
+language: en
+title: Katherine Moreno 👩‍💻 | Developer, Full Stack, Backend, Java, Spring Boot, JUnit, SQL, Frontend, JavaScript, Typescript,
+  React, Angular, Jest, RTL, TDD, CSS, HTML, Tailwind, Bootstrap
+description: Developer, Full Stack, Backend, Java, Spring Boot, JUnit, SQL, Frontend, JavaScript, Typescript, React, Angular, Jest, RTL, TDD,
+  CSS, HTML, Tailwind, Bootstrap
 ico: /uploads/katherine-moreno.ico
 image: /uploads/katherine-moreno.webp
 jsonLd: |-
@@ -18,7 +18,7 @@ jsonLd: |-
         },
         "email": "morenokatherine17@gmail.com",
         "image": "/uploads/katherine-moreno.webp",
-        "jobTitle": "Frontend Developer",
+        "jobTitle": "Full Stack Web Developer",
         "name": "Katherine Moreno",
         "birthDate": "1995-07-08",
         "gender": "female",
