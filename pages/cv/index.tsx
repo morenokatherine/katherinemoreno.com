@@ -128,7 +128,10 @@ export const CV: NextPage<HomeProps> = (props) => {
               <section>
                 <h1 className="text-xl mb-2">Profile</h1>
                 <p className="text-justify">
-                Full stack web developer. I want to join a work team that allows me to grow professionally! I am currently looking for a company that can add value with all knowledge I have acquired to enhance the company&#39;s performance.
+                  Full stack web developer. I want to join a work team that
+                  allows me to grow professionally! I am currently looking for a
+                  company that can add value with all knowledge I have acquired
+                  to enhance the company&#39;s performance.
                 </p>
               </section>
             </li>
@@ -214,13 +217,13 @@ export const CV: NextPage<HomeProps> = (props) => {
 
                   <div className="col-span-1">
                     <h2 className="text-2xl mb-2">Hard</h2>
-                    <ol className="flex flex-col gap-2">
-                      {props.technologies
-                        .filter((tech) => !tech.isSoft)
-                        .map((tech) => {
-                          return <li key={tech.index}>{tech.title}</li>;
-                        })}
-                    </ol>
+                      <ol className="grid grid-cols-2 col-span-1 gap-2">
+                        {props.technologies
+                          .filter((tech) => !tech.isSoft)
+                          .map((tech) => {
+                            return <li className="col-span-1" key={tech.index}>{tech.title}</li>;
+                          })}
+                      </ol>
                   </div>
                 </div>
               </section>
